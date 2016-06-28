@@ -42,6 +42,26 @@ The screenshot below shows what the app should look like.
   <img src="./screenshots/screen1.png" width="200">
 </p>
 
+#### Bonus
+
+- Create a **Detail View** activity for your list
+- Your Detail View activity should be called via an Intent in an `OnItemClickListener()`
+- Your Detail View should render individual data about each item in your table:
+    - ITEM_NAME
+    - DESCRIPTION
+    - PRICE
+    - TYPE
+
+###### Database Table Syntax
+
+```sql
+CREATE TABLE SHOPPING_LIST(_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    ITEM_NAME TEXT, 
+    DESCRIPTION TEXT, 
+    PRICE TEXT, 
+    TYPE TEXT);
+```
+
 ## Additional Resources
 
 - [Cursor](http://developer.android.com/reference/android/database/Cursor.html)
