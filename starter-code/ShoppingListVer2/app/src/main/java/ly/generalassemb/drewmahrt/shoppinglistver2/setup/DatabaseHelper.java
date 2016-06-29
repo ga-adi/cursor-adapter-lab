@@ -2,6 +2,7 @@ package ly.generalassemb.drewmahrt.shoppinglistver2.setup;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -16,9 +17,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DROP_TABLE = "DROP TABLE IF EXISTS SHOPPING_LIST;";
 
 
-    //public int id = id;
-    public String brand = "brand";
-    public String item = "item";
 
     public static final String shoppingList[] = {"id", "brand", "item"};
 
@@ -55,6 +53,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createShoppingList(2, "Wonder", "bread");
         createShoppingList(3, "MinuteMaid", "orange juice");
         createShoppingList(4, "Bisquick", "pancakes");
+
+
+    }
+    public void getList(int id, String brand, String item) {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = new String[]{"id","brand","item"};
+        String selection = "id =?";
+        String[] selectionArgs = new String[]{Integer.toString(id)};
+
+        Cursor c = db.query("SHOPPING_LIST",projection,selection,selectionArgs,null,null,null,null);
+        c.moveToFirst();
+
+        int itemID = Integer.parseInt(c.getString(c.getColumnIndex("id")));
+        String itemBrand = c.getString(c.getColumnIndex("brand"));
+        String itemName = c.getString(c.getColumnIndex("item"));
+
+
+
 
 
     }
