@@ -65,9 +65,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = db.query("SHOPPING_LIST",projection,selection,selectionArgs,null,null,null,null);
         c.moveToFirst();
 
-        int itemID = Integer.parseInt(c.getString(c.getColumnIndex("id")));
+        int itemId = Integer.parseInt(c.getString(c.getColumnIndex("id")));
         String itemBrand = c.getString(c.getColumnIndex("brand"));
         String itemName = c.getString(c.getColumnIndex("item"));
+
+        //SHOPPING_LIST sList = new SHOPPING_LIST(itemId,itemBrand ,itemName);
 
 
 

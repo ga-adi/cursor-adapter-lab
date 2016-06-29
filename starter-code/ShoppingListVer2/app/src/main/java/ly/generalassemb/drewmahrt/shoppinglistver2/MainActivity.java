@@ -9,6 +9,9 @@ import ly.generalassemb.drewmahrt.shoppinglistver2.setup.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
+
     ListView mListView;
 
     @Override
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
         db.seedList();
+
+
 
 
 
