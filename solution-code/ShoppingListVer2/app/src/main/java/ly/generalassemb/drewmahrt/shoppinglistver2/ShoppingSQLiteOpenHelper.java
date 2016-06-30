@@ -14,9 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-/**
- * Created by drewmahrt on 12/28/15.
- */
+
 public class ShoppingSQLiteOpenHelper extends SQLiteOpenHelper{
     private static final String TAG = ShoppingSQLiteOpenHelper.class.getCanonicalName();
 
